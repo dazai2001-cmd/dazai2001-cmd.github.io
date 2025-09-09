@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rahul Stanly Keecheril — Portfolio</title>
+  <meta name="description" content="Portfolio of Rahul Stanly Keecheril: projects, experience, and contact information." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚀</text></svg>">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rahul Stanly Keecheril — Portfolio" />
+  <meta property="og:description" content="Projects, experience, contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/000/fff&text=Your+Portfolio" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rahul Stanly Keecheril",
+    "url": "https://yourdomain.com",
+    "sameAs": ["#", "#"],
+    "jobTitle": "Data Scientist",
+    "description": "Your short professional bio."
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --panel: #121215;
+      --text: #e8e8ea;
+      --muted: #a8a8b3;
+      --brand: #7c5cff;
+      --brand-2: #19c6c4;
+      --ring: rgba(124, 92, 255, 0.45);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7fb;
+        --panel: #ffffff;
+        --text: #151515;
+        --muted: #5a6072;
+        --brand: #5b43dd;
+        --brand-2: #109e9c;
+        --ring: rgba(91, 67, 221, 0.3);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Noto Color Emoji;
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(124,92,255,0.15), transparent 60%),
+                  radial-gradient(1200px 800px at 100% 10%, rgba(25,198,196,0.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: color-mix(in srgb, var(--bg) 70%, transparent);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 12px 24px; max-width: var(--maxw); margin: 0 auto;
+    }
+    .nav .logo { font-weight: 800; letter-spacing: .5px; display: flex; align-items: center; gap: 10px; }
+    .nav .logo .dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(45deg, var(--brand), var(--brand-2)); box-shadow: 0 0 0 4px var(--ring); }
+    .nav a.btn {
+      padding: 10px 14px; border-radius: 999px; background: linear-gradient(45deg, var(--brand), var(--brand-2)); color: white;
+      box-shadow: var(--shadow); border: 0; display: inline-flex; align-items: center; gap: 8px; font-weight: 600;
+    }
+
+    /* Hero */
+    .hero { padding: 48px 24px 32px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    .badge { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background: rgba(124,92,255,0.15); border: 1px solid rgba(124,92,255,0.25); color: var(--text); font-weight: 600; }
+    .badge .pulse { width:8px; height:8px; border-radius:50%; background: var(--brand-2); box-shadow: 0 0 0 6px rgba(25,198,196,0.18); }
+
+    h1 { font-size: clamp(32px, 4vw, 56px); line-height: 1.1; margin: 16px 0; }
+    .lead { font-size: 1.125rem; color: var(--muted); }
+
+    .card {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--panel), transparent 10%), var(--panel));
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn { cursor: pointer; border: 0; border-radius: 12px; padding: 12px 16px; font-weight: 700; }
+    .btn.primary { background: linear-gradient(45deg, var(--brand), var(--brand-2)); color: white; }
+    .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,.12); color: var(--text); }
+
+    .avatar { aspect-ratio: 1; width: 220px; border-radius: 20px; border: 1px solid rgba(255,255,255,.1); overflow: hidden; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Sections */
+    section { padding: 48px 24px; }
+    section h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 16px; }
+    .section-header { display:flex; align-items:end; justify-content:space-between; gap: 12px; margin-bottom: 20px; }
+    .muted { color: var(--muted); }
+
+    /* About */
+    .about { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+
+    /* Projects */
+    .filters { display:flex; gap: 8px; flex-wrap: wrap; }
+    .chip { border: 1px solid rgba(255,255,255,.12); padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+    .chip.active { background: rgba(124,92,255,0.2); border-color: var(--brand); }
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+    .project { display:flex; flex-direction: column; overflow: hidden; }
+    .project .thumb { aspect-ratio: 16/10; background: #0f0f12; }
+    .project img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .project .body { padding: 14px; display:flex; flex-direction: column; gap: 8px; }
+    .tags { display:flex; gap:6px; flex-wrap: wrap; }
+    .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+
+    /* Experience */
+    .timeline { display: grid; gap: 14px; }
+    .item { display:grid; grid-template-columns: 1fr auto; gap: 10px; padding: 14px; border: 1px solid rgba(255,255,255,.08); border-radius: 12px; }
+    .item .where { font-weight: 700; }
+
+    /* Contact */
+    .contact-card { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 18px; }
+    .contact-card input, .contact-card textarea {
+      width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.15); background: rgba(0,0,0,.15); color: var(--text);
+    }
+    .contact-card textarea { min-height: 120px; resize: vertical; }
+    @media (max-width: 900px) { .contact-card { grid-template-columns: 1fr; } }
+
+    footer { padding: 40px 24px; text-align: center; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+
+    /* Utilities */
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .row { display:flex; gap: 12px; flex-wrap: wrap; align-items:center; }
+    .spacer { height: 24px; }
+
+    /* Print */
+    @media print {
+      header, .cta-row, .filters, .contact-card, .avatar { display:none !important; }
+      body { background: white; color: black; }
+      .card, section, footer { box-shadow: none; border: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header aria-label="Site header">
+    <nav class="nav">
+      <a class="logo" href="#home" aria-label="Home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Rahul Stanly Keecheril</span>
+      </a>
+      <div class="row" role="navigation" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#" id="downloadCV" role="button" aria-label="Download CV">Download CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home" class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="badge"><span class="pulse" aria-hidden="true"></span> Available for work</span>
+          <h1>Hi, I’m <span style="background: linear-gradient(45deg, var(--brand), var(--brand-2)); -webkit-background-clip:text; background-clip:text; color: transparent;">Rahul Stanly Keecheril</span> — I build data‑driven products.</h1>
+          <p class="lead">Data Scientist & AI Engineer focused on predictive maintenance, LLM apps, and real‑time dashboards. I ship end‑to‑end: data pipelines, modeling, and usable UIs. I turn messy data into decisions and delightful UX.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#projects">See my work</a>
+            <a class="btn ghost" href="mailto:contact@example.com">Email me</a>
+            <a class="btn ghost" href="https://github.com/yourhandle" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/yourhandle/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+        <div class="card avatar" aria-label="Profile image">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Portrait of Rahul Stanly Keecheril" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-header">
+        <h2 id="about-title">About</h2>
+        <p class="muted">A quick snapshot</p>
+      </div>
+      <div class="about">
+        <div class="card" style="padding:18px;">
+          <h3>What I do</h3>
+          <p>I design and ship ML features end‑to‑end: data pipelines, modeling (scikit‑learn, PyTorch), and usable UIs (Streamlit, React). I love observability, testing, and good DX.</p>
+          <ul>
+            <li>Predictive maintenance & time‑series</li>
+            <li>LLM apps: RAG, agents, evals</li>
+            <li>Dashboards & data viz</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:18px;">
+          <h3>Toolbox</h3>
+          <p class="muted">Python, SQL, Docker, Azure, AWS, scikit‑learn, PyTorch, TensorFlow, FastAPI, PostgreSQL, Power BI</p>
+          <div class="row">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Azure</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Plotly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-header">
+        <div>
+          <h2 id="projects-title">Projects</h2>
+          <p class="muted">Filter by tag</p>
+        </div>
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="llm" role="tab">LLM</button>
+          <button class="chip" data-filter="dashboard" role="tab">Dashboard</button>
+          <button class="chip" data-filter="cv" role="tab">Computer Vision</button>
+        </div>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <!-- AI Meeting Assistant -->
+        <article class="project card" data-tags="llm">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop" alt="Screenshot of LLM app" /></div>
+          <div class="body">
+            <h3>AI Meeting Assistant</h3>
+            <p class="muted">Transcribes (Whisper), summarizes, and creates action items with RAG; REST API + web UI.</p>
+            <div class="tags"><span class="tag">LLM</span><span class="tag">Whisper</span><span class="tag">FastAPI</span><span class="tag">RAG</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Live demo</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Manufacturing Ops Dashboard -->
+        <article class="project card" data-tags="dashboard">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1551281044-8a6b4a9a90f3?q=80&w=1400&auto=format&fit=crop" alt="Manufacturing dashboard screenshot" /></div>
+          <div class="body">
+            <h3>Manufacturing Operations Dashboard</h3>
+            <p class="muted">Real‑time gauges, anomaly alerts, production KPIs; Streamlit + Plotly with live data.</p>
+            <div class="tags"><span class="tag">Dashboard</span><span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">Time‑series</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Case study</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mass Polling System (CV) -->
+        <article class="project card" data-tags="cv">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1400&auto=format&fit=crop" alt="Computer vision project screenshot" /></div>
+          <div class="body">
+            <h3>Mass Polling System</h3>
+            <p class="muted">Gesture‑based sentiment from classroom photos using lightweight CV.</p>
+            <div class="tags"><span class="tag">Computer Vision</span><span class="tag">Python</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Blog</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dota‑2 Analytics Text‑to‑Dashboard -->
+        <article class="project card" data-tags="dashboard llm">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1400&auto=format&fit=crop" alt="Dota-2 dashboard" /></div>
+          <div class="body">
+            <h3>Dota‑2 Analytics: Text‑to‑Dashboard</h3>
+            <p class="muted">Natural‑language to SQL pipeline driving interactive match dashboards.</p>
+            <div class="tags"><span class="tag">LLM</span><span class="tag">Postgres</span><span class="tag">Streamlit</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Demo</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- LSTM Stock Market Forecast -->
+        <article class="project card" data-tags="time-series">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1400&auto=format&fit=crop" alt="Stock LSTM" /></div>
+          <div class="body">
+            <h3>Stock Market Forecasting with LSTM</h3>
+            <p class="muted">Built and tuned LSTM for price prediction; evaluated with RMSE (Train 1.66, Test 3.31).</p>
+            <div class="tags"><span class="tag">LSTM</span><span class="tag">Keras</span><span class="tag">Time‑series</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Notebook</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dockerized LLM Chatbot -->
+        <article class="project card" data-tags="llm">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1400&auto=format&fit=crop" alt="Dockerized LLM chatbot" /></div>
+          <div class="body">
+            <h3>Dockerized LLM Chatbot</h3>
+            <p class="muted">Containerized small LLM with memory & tool routing; MLOps‑ready.</p>
+            <div class="tags"><span class="tag">Docker</span><span class="tag">FastAPI</span><span class="tag">LLM</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Readme</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- FoG Detection (Dissertation) -->
+        <article class="project card" data-tags="time-series cv">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1400&auto=format&fit=crop" alt="FoG detection" /></div>
+          <div class="body">
+            <h3>FoG Detection in Parkinson’s</h3>
+            <p class="muted">LSTM‑based detection of Freezing of Gait from wearable time‑series.</p>
+            <div class="tags"><span class="tag">LSTM</span><span class="tag">Time‑series</span><span class="tag">Healthcare</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Paper</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Valorant Match Win Model -->
+        <article class="project card" data-tags="ml">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1400&auto=format&fit=crop" alt="Valorant analytics" /></div>
+          <div class="body">
+            <h3>Valorant Match Win Model</h3>
+            <p class="muted">Predicts match outcomes using VLR.gg data + agent compositions.</p>
+            <div class="tags"><span class="tag">ML</span><span class="tag">Scraping</span><span class="tag">Sports Analytics</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Overview</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Azure Chatbot -->
+        <article class="project card" data-tags="llm">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1400&auto=format&fit=crop" alt="Azure chatbot" /></div>
+          <div class="body">
+            <h3>Azure Chatbot</h3>
+            <p class="muted">Deployed conversational bot on Azure; integrates with knowledge base.</p>
+            <div class="tags"><span class="tag">Azure</span><span class="tag">Bot</span><span class="tag">RAG</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Demo</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sales Dashboard (Power BI) -->
+        <article class="project card" data-tags="dashboard">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1400&auto=format&fit=crop" alt="Power BI dashboard" /></div>
+          <div class="body">
+            <h3>Sales Dashboard (Power BI)</h3>
+            <p class="muted">Interactive sales KPIs, cohort analysis, and drill‑through reports.</p>
+            <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">ETL</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Report</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kaggle Time‑Forecast Utilities -->
+        <article class="project card" data-tags="time-series">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1400&auto=format&fit=crop" alt="Kaggle utilities" /></div>
+          <div class="body">
+            <h3>Kaggle Time‑Forecast Utilities</h3>
+            <p class="muted">Reusable pipelines for feature engineering, backtesting, and error analysis.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">scikit‑learn</span></div>
+            <div class="row">
+              <a href="#" class="btn ghost">Docs</a>
+              <a href="#" class="btn ghost">Source</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="exp-title">
+      <div class="section-header">
+        <h2 id="exp-title">Experience</h2>
+        <p class="muted">Recent roles & impact</p>
+      </div>
+      <div class="timeline">
+        <div class="item card">
+          <div class="body">
+            <div class="row" style="justify-content: space-between;">
+              <div>
+                <div class="where">Data & AI Society, University of Liverpool • President / Treasurer</div>
+                <div class="muted">2023 — 2025 • Liverpool</div>
+              </div>
+              <a class="btn ghost" href="#">Reference</a>
+            </div>
+            <ul>
+              <li>Organized speaker sessions with tech leaders/CEOs; led workshops & mentorship for 100+ members.</li>
+              <li>Drove collaborative projects (LLM apps, dashboards) and society ops (budgeting, events).</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item card">
+          <div class="body">
+            <div class="row" style="justify-content: space-between;">
+              <div>
+                <div class="where">Wendy’s UK • Crew / Inventory</div>
+                <div class="muted">2025 • Birkenhead</div>
+              </div>
+              <a class="btn ghost" href="#">Reference</a>
+            </div>
+            <ul>
+              <li>Supported inventory and back‑of‑house operations in a fast‑paced environment.</li>
+              <li>Improved accuracy and throughput through organized stock checks and prep.</li>
+            </ul>
+          </div>
+        </div>
+              <a class="btn ghost" href="#">Reference</a>
+            </div>
+            <ul>
+              <li>Delivered X% KPI improvement by building Y (tech stack A, B, C).</li>
+              <li>Productionized model with CI/CD, monitoring, and A/B testing.</li>
+              <li>Collaborated with cross‑functional partners to ship features.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item card">
+          <div class="body">
+            <div class="where">University of Liverpool • MSc Data Science & AI</div>
+            <div class="muted">2023 — 2025</div>
+            <ul>
+              <li>Dissertation: Freezing of Gait (FoG) detection in Parkinson’s with LSTM (time‑series).</li>
+              <li>Modules: Applied AI, Data Mining, Data Visualization, Computational Intelligence, Statistical Methods, ML Algorithms.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="section-header">
+        <h2 id="contact-title">Contact</h2>
+        <p class="muted">Let’s build something</p>
+      </div>
+      <form class="card contact-card" onsubmit="sendEmail(event)">
+        <div>
+          <label class="sr-only" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div>
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required />
+        </div>
+        <div style="grid-column: 1/-1;">
+          <label class="sr-only" for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What would you like to build?" required></textarea>
+        </div>
+        <div style="grid-column: 1/-1; display:flex; gap: 10px;">
+          <button class="btn primary" type="submit">Send</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Rahul Stanly Keecheril. Built with HTML/CSS/JS. <a href="#home">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Download CV (replace with your actual file path)
+    document.getElementById('downloadCV').addEventListener('click', function(e){
+      e.preventDefault();
+      // Example: trigger download of a local file named cv.pdf when hosted
+      window.location.href = 'cv.pdf';
+    });
+
+    // Simple project filter
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.project');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const f = chip.dataset.filter;
+        cards.forEach(card => {
+          const show = f === 'all' || card.dataset.tags.includes(f);
+          card.style.display = show ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // Contact form: opens mail client with prefilled message
+    function sendEmail(ev){
+      ev.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' <' + email + '>');
+      window.location.href = 'mailto:contact@example.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>
